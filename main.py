@@ -137,11 +137,10 @@ def take_data(chat_id, message):
 def is_number(message):
     if len(message) == 11 or len(message) == 12:
         if message[:-10] == '+7':
-            message = '8' + message[2:]
-        if message.isdigit():
-            return True
-        else:
-            return False
+            if ('8' + message[2:]).isdigit():
+                return True
+            else:
+                return False
 
 
 def open_sing_in_payers(chat_id):
