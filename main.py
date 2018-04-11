@@ -141,6 +141,10 @@ def is_number(message):
                 return True
             else:
                 return False
+        if len(message) == 11 and message.isdigit():
+            return True
+        else:
+            return False
 
 
 def open_sing_in_payers(chat_id):
