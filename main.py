@@ -3,7 +3,6 @@ import constants
 from flask import Flask
 from flask import request
 from flask import jsonify
-import stringify
 import constants
 import re
 import telebot
