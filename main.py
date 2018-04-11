@@ -137,7 +137,7 @@ def take_data(chat_id, message):
 def is_number(message):
     if len(message) == 11 or len(message) == 12:
         if message[:-10] == '+7':
-            message = '8' + login[2:]
+            message = '8' + message[2:]
         if message.isdigit():
             return True
         else:
