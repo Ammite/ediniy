@@ -1,0 +1,16 @@
+heroku config:set -a webhook-for-ediniy HEROKU_OAUTH_ID=1c4e13b4-734c-4de3-af66-40d7700071eb HEROKU_OAUTH_SECRET=6363bb8d-4d2e-4084-9518-f76b115c5ce0
+
+
+
+HEROKU_OAUTH_ID=1c4e13b4-734c-4de3-af66-40d7700071eb
+HEROKU_OAUTH_SECRET=6363bb8d-4d2e-4084-9518-f76b115c5ce0
+
+
+afternoon-atoll-79158
+
+heroku webhooks:add --include api:release -l sync --url https://webhook-for-ediniy.herokuapp.com/webhooks -s 2b8f1448abff08d2b7dbfadf53fd78afbaa898707fe2d3f59fcedef19011afe2 -a afternoon-atoll-79158
+
+heroku config:set FOO=bar -a afternoon-atoll-79158
+
+
+heroku webhooks:add -i api:release -l notify -u https://ediniy-vibor-bot.herokuapp.com/ -a ediniy-vibor-bot
