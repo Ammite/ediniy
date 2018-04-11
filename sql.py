@@ -51,6 +51,7 @@ def take_data_from_db(chat_id, message):
             data = cursor.fetchone()
             if data is None:
                 continue
+            print(data)
             cursor.execute("SELECT COUNT(Name) FROM {}".format(i[0]))
             count = cursor.fetchall()
             count_of_payers = str(count[0][0])
