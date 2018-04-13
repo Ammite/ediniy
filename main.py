@@ -123,11 +123,32 @@ def work_with_text():
     elif message == 'Вoйти в кабинет пайщика':  # Useful
         open_sing_in_payers(chat_id)
 
+    elif message == 'Консультация от эксперта':
+        send_message(chat_id, "Пожалуйста позвоните по данному номеру +7 778 769-38-88 или напишите на info@1-kz.kz.")
+
     elif message in constants.library_of_funcs:
         send_message(chat_id, "[WIP]\nЕще не работает.")
 
+    elif message == 'Вступить в кооператив':
+        send = "Пожалуйста заполните эти бланки и отправьте их на почту info@1-kz.kz."
+        send_message(chat_id, send)
+        send_document(chat_id, constants.blank_on_in)
+        send_document(chat_id, constants.blank_on_in2)
+
+    elif message == 'Выход с кооператива':
+        send = "Пожалуйста заполните этот бланк и отправьте его на почту info@1-kz.kz."
+        send_message(chat_id, send)
+        send_document(chat_id, constants.blank_on_out)
+
     else:
         send_message(chat_id, "Не понимаю введенные данные")
+
+
+def send_document(chat_id, document):
+    url = URL + 'sendDocument'
+    answer = {'chat_id': chat_id, 'document': document}
+    r = requests.post(url, json=answer)
+    return r.json()
 
 
 def take_data(chat_id, message):
